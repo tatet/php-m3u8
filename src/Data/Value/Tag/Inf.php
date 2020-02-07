@@ -40,7 +40,11 @@ class Inf
 
     public static function fromString($string)
     {
-        list($duration, $title) = explode(',', $string);
+        $re = '/^#EXTINF:?([0-9\.]*)?,?(.*)?$/'; // From video-js
+
+        preg_match($re, $string, $matches);
+
+        list($duration, $title) = array_slice($matches, 1);
 
         return new self($duration, $title);
     }
