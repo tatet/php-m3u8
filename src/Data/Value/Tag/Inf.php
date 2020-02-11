@@ -40,7 +40,6 @@ class Inf
 
     public static function fromString($string)
     {
-        echo $string . PHP_EOL;
         $re = '/^\s*([0-9\.]*)?\s*,?\s*(.*)?$/';
 
         preg_match($re, $string, $matches);
