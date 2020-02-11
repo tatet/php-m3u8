@@ -40,7 +40,8 @@ class Inf
 
     public static function fromString($string)
     {
-        $re = '/^#EXTINF:?([0-9\.]*)?,?(.*)?$/'; // From video-js
+        echo $string . PHP_EOL;
+        $re = '/^\s*([0-9\.]*)?\s*,?\s*(.*)?$/';
 
         preg_match($re, $string, $matches);
 
