@@ -30,7 +30,7 @@ class DataBuilder
             return;
         }
 
-        if ($this->lastAddedTag['definition']->isUriAware()) {
+        if (isset($this->lastAddedTag['definition']) && $this->lastAddedTag['definition']->isUriAware()) {
             $this->lastAddedTag['value']['uri'] = $uri;
 
             return;
