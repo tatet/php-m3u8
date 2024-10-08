@@ -29,8 +29,8 @@ class Byterange
         }
 
         $this->offset = (int) $offset;
-        if ($this->offset < 1) {
-            throw new \InvalidArgumentException('$offset should be an integer greater than 0');
+        if ($this->offset < 0) {
+            throw new \InvalidArgumentException('$offset should be an integer equal or greater than 0');
         }
     }
 
@@ -49,6 +49,16 @@ class Byterange
     public function getOffset()
     {
         return $this->offset;
+    }
+
+    public function setLength($length)
+    {
+        $this->length = $length;
+    }
+
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
     }
 
     public function __toString()
